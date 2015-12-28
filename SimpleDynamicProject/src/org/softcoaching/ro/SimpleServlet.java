@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class SimpleServlet
  */
 //adnotarea /SimpleServletPath4 face sa avem request si response
+
+//http://localhost:8080/SimpleDynamicProject/SimpleServletPath4
 @WebServlet(description = "Simple Servlet playground.", urlPatterns = { "/SimpleServletPath4" })
 public class SimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
