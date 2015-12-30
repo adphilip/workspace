@@ -25,9 +25,9 @@ public class XMLServlet extends HttpServlet {
 		//request parameter
 		//http://localhost:8080/SimpleDynamicProject/XMLServletPath?userName=Adrian
 		String userName = request.getParameter("userName");
-		out.println("<h3>Ce faci in do Get method din servlet via XML?</h3> <br> <h4>Ia ce fac de mult </h4> " + userName);
+		out.println("<h3>Ce faci in doGet method din servlet via XML?</h3> <br> <h4>DO GET method! </h4> " + userName);
 		
-		//print in browser consoole
+		//print in browser console
 		System.out.println("Hi from doGet method in XML Servlet!, userName :" + userName);
 	}
 	
