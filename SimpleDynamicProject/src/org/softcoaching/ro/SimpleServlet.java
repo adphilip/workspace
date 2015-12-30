@@ -26,7 +26,7 @@ public class SimpleServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter writer = response.getWriter();
 		writer.println("<h3>Ce faci in do Get method din servlet?</h3> <br> Afisat in index html with header 3");
-		//e afisat in consola
+		//print in console.
 		System.out.println("Hi from doGet method!");
 	}
 

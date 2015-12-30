@@ -6,13 +6,16 @@ import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-
+// HTTP is stateless protocol !!!
+//Session - Tomcat offer an Session concept
 //http://localhost:8080/SimpleDynamicProject/XMLServletPath
 public class XMLServlet extends HttpServlet {
 
@@ -25,10 +28,29 @@ public class XMLServlet extends HttpServlet {
 		//request parameter
 		//http://localhost:8080/SimpleDynamicProject/XMLServletPath?userName=Adrian
 		String userName = request.getParameter("userName");
-		out.println("<h3>Ce faci in doGet method din servlet via XML?</h3> <br> <h4>DO GET method! </h4> " + userName);
+		
+		/*Session concept:
+		 * Tomcat session object
+		*/
+		HttpSession session = request.getSession();
+		if(userName != null &&  userName != ""){
+			session.setAttribute("savedUserName", userName);
+		}
+		
+		/*
+		 * Context object via servlet context
+		 */
+		ServletContext context = request.getServletContext();
+		if(userName != null &&  userName != ""){
+			context.setAttribute("savedUserName", userName);
+		}
+		
+		out.println("<h3>doGet method din servlet via XML?</h3>   " + userName);
+		out.println("<h3>Session get attribute</h3>   " + (String)context.getAttribute("savedUserName"));
+		out.println("<h3>Context servlet get attribute</h3>   " + (String)session.getAttribute("savedUserName"));
 		
 		//print in browser console
-		System.out.println("Hi from doGet method in XML Servlet!, userName :" + userName);
+		System.out.println("Hi from doGet method in XML Servlet!, userName :" + (String)session.getAttribute("savedUserName"));
 	}
 	
 	
