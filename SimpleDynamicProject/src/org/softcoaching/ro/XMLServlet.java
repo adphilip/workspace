@@ -27,7 +27,7 @@ public class XMLServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		out.println("<h3>Ce faci in do Get method din servlet via XML?</h3> <br> <h4>Ia ce fac de mult </h4> " + userName);
 		
-		//e afisat in consola
+		//print in browser consoole
 		System.out.println("Hi from doGet method in XML Servlet!, userName :" + userName);
 	}
 	
@@ -41,10 +41,28 @@ public class XMLServlet extends HttpServlet {
 		//request parameter
 		//http://localhost:8080/SimpleDynamicProject/XMLServletPath?userName=Adrian
 		String userName = request.getParameter("userName");
-		out.println("<h3>Ce faci in do POST ?</h3>  " + userName);
+		String fullName = request.getParameter("fullName");
+		String profession = request.getParameter("profession");
+		//String location = request.getParameter("location");
+		String [] location = request.getParameterValues("location");
+				
+		//Print in web base
+		out.println("<h3>Ce faci in do POST :</h3>  ");
+		out.println("<p>User name: </p>  " + userName);
+		out.println("<p>Full name: </p>  " + fullName);
+		out.println("<p>You are a(n): </p>  " + profession);
+		
+		out.println("<p>You are in location:   " + location.length +"</p>");
+	
+		for (int i =0; i<location.length; i++){
+			out.println("Place :" + location[i]);
+		}
+		
+		
+		
 		
 		//e afisat in consola
-		System.out.println("Hi from doPost method in XML Servlet!, userName :" + userName);
+		System.out.println("Hi from doPost method in XML Servlet!, userName :" + userName + " full name :" + fullName);
 	}
 
 }

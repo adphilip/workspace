@@ -17,7 +17,22 @@ get method
 
 
 <form method = "post" action= "XMLServletPath">
-	<input name = "userName"/>
+	User Name: <input name = "userName"/>
+	Full Name: <input name = "fullName"/>
+	<br>
+	Profession:
+	<input type="radio" name="profession" value="Developer"> Developer </input>
+	<input type="radio" name="profession" value="Doctor"> Doctor </input>
+	<br>
+	<select name="location" multiple size=3>
+	<option value="Bucharest"> Bucharest </option>
+	<option value="Prague"> Prague </option>
+	<option value="Venice"> Venice </option>
+	<option value="Budapest"> Budapest </option>
+	<option value="Pyce"> Pyce </option>
+	<option value="Paris"> Paris </option>
+	</select>
+	<br>
 	<input type = "submit" />
 </form>
 
