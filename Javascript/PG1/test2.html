@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>test2</title>
+
+<script type="text/javascript">
+
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+  this.calcArea = function() {
+      return this.height * this.width;
+  };
+  // put our perimeter function here!
+  this.calcPerimeter = function(){
+      return 2*(this.height + this.width);
+  }
+}
+
+var rex = new Rectangle(7,3);
+var area = rex.calcArea();
+var perimeter = rex.calcPerimeter();
+
+console.log ("area: " + area );
+
+
+//second problem
+function Rabbit(adjective) {
+    this.adjective = adjective;
+    this.describeMyself = function() {
+        console.log("I am a " + this.adjective + " rabbit");
+    };
+}
+
+// now we can easily make all of our rabbits
+var rabbit1 = new Rabbit("fluffy");
+var rabbit2 = new Rabbit("happy");
+var rabbit3 = new Rabbit("sleepy");
+
+rabbit1.describeMyself();
+rabbit2.describeMyself();
+rabbit3.describeMyself();
+
+</script>
+
+
+</head>
+<body>
+
+<h2>
+Area: <script type="text/javascript">
+area;
+</script>
+
+</h2>
+
+</body>
+</html>
