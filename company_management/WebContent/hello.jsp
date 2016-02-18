@@ -9,6 +9,15 @@
 <body>
 
 	<h1>Company management - hello.jsp</h1>
-
+	
+	<form action="/company_management/ServletOne" method="post">
+	Name: <input type="text" value="" name="name"/>
+	<input type="submit" value ="Name submit">
+	</form>
+	
+	<form action="/company_management/ServletOne" method="get">
+	ID Employee: <input type="text" value="" name="idemployee"/>
+	<input type="submit" value ="IDEmployee submit">
+	</form>
 </body>
 </html>
