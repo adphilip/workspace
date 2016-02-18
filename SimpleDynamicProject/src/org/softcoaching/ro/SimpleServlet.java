@@ -2,6 +2,7 @@ package org.softcoaching.ro;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,10 +25,13 @@ public class SimpleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//Date
+		Date today = new java.util.Date();
+		// For printing the info from JSP
 		PrintWriter writer = response.getWriter();
 		writer.println("<h3>Ce faci in do Get method din servlet?</h3> <br> Afisat in index html with header 3");
 		//print in console.
-		System.out.println("Hi from doGet method!");
+		System.out.println("Hi from doGet method!" + today);
 	}
 
 }

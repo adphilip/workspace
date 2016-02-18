@@ -1,6 +1,9 @@
 package org.softcoaching.ro;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +45,15 @@ public class ServletOne extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//Date
+		Date today = new java.util.Date();
+		// Get from JSP
+		System.out.println("I'm in GET! ");
+		String idEmployee = request.getParameter("idemployee");
+		PrintWriter out = response.getWriter();
+		out.println ("Get IDEmployee:" + idEmployee + " today: " + today);
+		System.out.println("Get IDEmployee:" + idEmployee + " today: " + today);
 	}
 
 	/**
@@ -50,7 +61,14 @@ public class ServletOne extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//Date
+		Date today = new java.util.Date();
+		//
+		System.out.println("I'm in POST! ");
+		String nameIn = request.getParameter("name");
+		PrintWriter out = response.getWriter();
+		out.println ("POST name: " + nameIn + " today: " + today); 
+		System.out.println("Get IDEmployee: " + nameIn + " today: " + today);
 	}
 
 }
